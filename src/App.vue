@@ -1,6 +1,6 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <p>On the left, the vue app with placeholders. On the right, result after cleanup.</p>
 </template>
 
 <script>
