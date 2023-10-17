@@ -2,8 +2,10 @@
     <div class="homepage">
       <h1>Welcome to My Awesome Website!</h1>
       <p>Explore the incredible content we have to offer.</p>
-      <base-button @click="exploreWebsite" margin="10px">BaseButton with Custom Margin</base-button>
-      <base-button :disabled="true">Disabled Button</base-button>
+      <base-button @click="exploreWebsite" margin="10px" color="primary">Primary Button</base-button>
+      <base-button @click="exploreWebsite" margin="10px" color="warn">Warning Button</base-button>
+      <base-button @click="exploreWebsite" margin="10px" color="danger">Danger Button</base-button>
+      <base-button :disabled="true" margin="10px" color="primary">Disabled Primary Button</base-button>
     </div>
   </template>
   
@@ -17,7 +19,7 @@
     },
     methods: {
       exploreWebsite() {
-        // Handle the "BaseButton with Custom Margin" button click event
+        // Handle the button click event
         // You can add a router push here to navigate to another page.
       },
     },
@@ -40,5 +42,5 @@
     font-size: 1.2rem;
     color: #333; /* Adjust the color as needed */
   }
-</style>
+  </style>
   
