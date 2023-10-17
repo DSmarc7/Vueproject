@@ -1,31 +1,20 @@
-
-
 <template>
-  <div id="app">
-    <HomePage />
-    <BaseHeader/>
-    <BaseFooter/>
-    
-  </div>
+  <base-layout>
+    <home-page />
+  </base-layout>
 </template>
 
 <script>
-import HomePage from './components/HomePage.vue';
-import BaseHeader from './components/BaseHeader.vue';
-import BaseFooter from './components/BaseFooter.vue';
-
-
+import BaseLayout from './components/BaseLayout.vue'; // Import the BaseLayout component
+import HomePage from './components/HomePage.vue'; // Import the HomePage component
 
 export default {
-  name: 'App',
   components: {
-    HomePage,
-    BaseHeader,
-    BaseFooter
-  }
-}
+    'base-layout': BaseLayout,
+    'home-page': HomePage,
+  },
+};
 </script>
-
 
 <style>
 #app {
