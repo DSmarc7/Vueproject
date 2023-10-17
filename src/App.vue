@@ -1,18 +1,25 @@
-<template>
 
-  <p>On the left, the vue app with placeholders. On the right, result after cleanup.</p>
+
+<template>
+  <div id="app">
+    <HomePage />
+    <p>Here is the page</p>
+  </div>
 </template>
 
 <script>
+import HomePage from './components/HomePage.vue';
+
 
 
 export default {
   name: 'App',
   components: {
-    
+    HomePage
   }
 }
 </script>
+
 
 <style>
 #app {
