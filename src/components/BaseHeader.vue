@@ -1,23 +1,36 @@
 <template>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <!-- Add more navigation links as needed -->
-        </ul>
-      </nav>
-      <div class="user-info">
-        <p>Efrei Student</p>
-      </div>
-    </header>
-  </template>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <!-- Add more navigation links as needed -->
+        <li><SigninButton @click="signInUser" margin="10px" color="primary">Sign In</SigninButton></li>
+      </ul>
+    </nav>
+    <div class="user-info">
+      <p>Efrei Student</p>
+    </div>
+  </header>
+</template>
 
 <script>
+import SigninButton from './SigninButton.vue'; // Import your SigninButton component here
+
 export default {
-    name: 'BaseHeader'
-}
+  name: 'BaseHeader',
+  components: {
+    SigninButton, // Register SigninButton as a component
+  },
+  methods: {
+    signInUser() {
+      // Handle the sign-in logic here
+    },
+  },
+};
 </script>
+
+
+
 
 <style scoped>
 h1 {

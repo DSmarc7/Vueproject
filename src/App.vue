@@ -8,10 +8,12 @@
 import BaseLayout from './components/BaseLayout.vue'; // Import the BaseLayout component
 import HomePage from './components/HomePage.vue'; // Import the HomePage component
 
+
 export default {
   components: {
     'base-layout': BaseLayout,
     'home-page': HomePage,
+    
   },
 };
 </script>

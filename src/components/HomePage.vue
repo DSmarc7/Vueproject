@@ -2,41 +2,25 @@
   <div class="homepage">
     <h1>Welcome to My Awesome Website!</h1>
     <p>Explore the incredible content we have to offer.</p>
-    <base-button @click="exploreWebsite" margin="10px" color="primary">Primary Button</base-button>
-    <base-button @click="exploreWebsite" margin="10px" color="warn">Warning Button</base-button>
-    <base-button @click="exploreWebsite" margin="10px" color="danger">Danger Button</base-button>
-    <base-button :disabled="buttonDisabled" margin="10px" color="primary">Dynamic Waiting Button</base-button>
+    <async-button ref="asyncButton" @click="exploreWebsite" margin="10px" color="primary">Click Me</async-button>
   </div>
 </template>
 
 <script>
-import BaseButton from './BaseButton.vue';
+import AsyncButton from './AsyncButton.vue';
 
 export default {
   name: 'HomePage',
   components: {
-    'base-button': BaseButton,
-  },
-  data() {
-    return {
-      buttonDisabled: false,
-      clickCount: 0,
-    };
+    'async-button': AsyncButton,
   },
   methods: {
     exploreWebsite() {
-      this.clickCount++;
-      this.disableButtonForDynamicTime(this.clickCount).then(() => {
-        this.buttonDisabled = false;
-      });
-    },
-    disableButtonForDynamicTime(waitTime) {
-      this.buttonDisabled = true;
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve();
-        }, waitTime * 1000); // Increase wait time by 1 second per click
-      });
+      // Simulate an asynchronous task, e.g., an API call
+      this.$refs.asyncButton.startLoading(); // Start loading animation
+      setTimeout(() => {
+        this.$refs.asyncButton.stopLoading(); // Stop loading animation after 2 seconds
+      }, 2000);
     },
   },
 };
